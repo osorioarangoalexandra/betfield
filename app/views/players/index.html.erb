@@ -1,27 +1,35 @@
-<p id="notice"><%= notice %></p>
+<section id="master" class="gradient-2">
 
-<h1>Players</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<!--- Index--->
+<div class="flex flex-wrap mx-auto">
+  <%= @players.each do |p| %>
+    <!--Card-->
+    <div class="max-w-sm rounded overflow-hidden shadow-lg m-4 bg-white">
+      <img class="w-full" src="/assets/sample.jpg" alt="Sunset in the mountains">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2"><%= p.name %></div>
+        <span class="inline-block rounded-full px-3 py-1 text-lg pl-8 font-semibold text-gray-700 mr-2"></span>
+        <p class="text-gray-700 text-base">
+           <%= p.location%>
+        </p>
+      </div>
+      <div class="px-6 py-4">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"><%= p.rating %></span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"><%= p.wins %></span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"><%= p.loses%></span>
+      </div>
+    </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+</section>
 
-<%= link_to 'New Player', new_player_path %>
+<style>
+    .gradient{
+    background: linear-gradient(180deg, rgba(5,123,241,1) 0%, rgba(242,135,128,1) 100%);
+    }
+    
+    .gradient-2 {
+        background: linear-gradient(180deg, rgba(242,135,128,1) 0%, rgba(5,123,241,1) 100%);
+    }
+</style>
+
