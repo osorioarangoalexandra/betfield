@@ -6,20 +6,17 @@
   <% @team.players.each do |p| %>
     <!--Card-->
     <div class="max-w-sm rounded overflow-hidden shadow-lg m-4 bg-white">
-      <img class="w-full" src="/assets/sample.jpg" alt="Sunset in the mountains">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2"><%= p.name %></div>
-        <span class="inline-block rounded-full px-3 py-1 text-lg pl-8 font-semibold text-gray-700 mr-2"></span>
+        <span class="inline-block rounded-full px-3 py-1 text-lg pl-8 font-semibold text-gray-700 mr-2"><%= p.position %> </span>
         <p class="text-gray-700 text-base">
-           <%= p.location%>
+            Place your bet either here! Buena Suerte!
         </p>
       </div>
       <div class="px-6 py-4">
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"><%= p.rating %></span>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"><%= p.wins %></span>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"><%= p.loses%></span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#Futbol</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#Rivals</span>
       </div>
-    </div>
     <% end %>
 
 </section>
