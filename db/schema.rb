@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_165620) do
+ActiveRecord::Schema.define(version: 2020_02_22_172406) do
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "location"
+    t.integer "wins"
+    t.integer "losses"
+    t.float "rating"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
