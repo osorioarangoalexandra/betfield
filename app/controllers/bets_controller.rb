@@ -5,16 +5,20 @@ class BetsController < ApplicationController
   # GET /bets.json
   def index
     @bets = Bet.all
+    @schedule = Schedule.find(params[:schedule_id])
   end
 
   # GET /bets/1
   # GET /bets/1.json
   def show
+    @bet = Bet.find(params[:id])
+    @schedule = Schedule.find(params[:schedule_id])
   end
 
   # GET /bets/new
   def new
     @bet = Bet.new
+    @schedule = Schedule.find(params[:schedule_id])
   end
 
   # GET /bets/1/edit
@@ -26,6 +30,9 @@ class BetsController < ApplicationController
   def create
     @bet = Bet.new(bet_params)
 
+    @bet.schedule_id = params[:schedule_id]
+    @bet.user_id = current_user.id
+    
     respond_to do |format|
       if @bet.save
         format.html { redirect_to @bet, notice: 'Bet was successfully created.' }

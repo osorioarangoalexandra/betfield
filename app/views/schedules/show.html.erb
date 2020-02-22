@@ -2,7 +2,8 @@
 
 <p>
   <strong>Home team:</strong>
-  <%= @schedule.home_team %>
+  <%= @schedule.team.name %>
+
 </p>
 
 <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
