@@ -16,6 +16,36 @@
     <%= form.number_field :home_team %>
   </div>
 
+  <div class="field">
+    <%= form.label :away_team %>
+    <%= form.number_field :away_team %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_match %>
+    <%= form.date_field :date_of_match %>
+  </div>
+  
+  <%= form.label :time %>
+    <%= form.text_field :time %>
+  </div>
+
+  <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <%= form.label :home_team_score %>
+    <%= form.number_field :home_team_score %>
+  </div>
+
+  <%= form.label :away_team_score %>
+    <%= form.number_field :away_team_score %>
+  </div>
+
+  <%= form.label :its_tie %>
+    <%= form.text_field :its_tie %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
