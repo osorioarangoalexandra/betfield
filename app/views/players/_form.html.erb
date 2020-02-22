@@ -1,4 +1,5 @@
-<%= form_with(model: player, local: true) do |form| %>
+<%= form_for [@team,@player] do |form| %>
+
   <% if player.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
@@ -15,6 +16,23 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.text_field :level %>
+  </div>
+
+
 
   <div class="actions">
     <%= form.submit %>

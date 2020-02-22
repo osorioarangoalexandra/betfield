@@ -69,6 +69,6 @@ class SchedulesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def schedule_params
-      params.require(:schedule).permit(:home_team)
+      params.require(:schedule).permit(:home_team, :away_team, :date_of_match, :time, :status, :home_team_score, :away_team_score, :its_tie)
     end
 end
