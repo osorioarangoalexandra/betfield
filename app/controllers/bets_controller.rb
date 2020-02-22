@@ -69,6 +69,6 @@ class BetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bet_params
-      params.require(:bet).permit(:schedule_id)
+      params.require(:bet).permit(:schedule_id, :user_id, :amount, :score_home_team, :score_away_team)
     end
 end
