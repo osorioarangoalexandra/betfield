@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :bets
-  resources :schedules
+  resources :schedules do
+    resources :bets
+  end
   resources :teams do
     resources :players
   end

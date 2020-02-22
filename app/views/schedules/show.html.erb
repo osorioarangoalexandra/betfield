@@ -1,4 +1,13 @@
-<body class="text-gray-800 antialiased">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Home team:</strong>
+  <%= @schedule.team.name %>
+
+</p>
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>
   
     <div id="root">
         <main class="profile-page">
@@ -48,4 +57,4 @@
             </section>
         </main>
     </div>
-</body>
+
