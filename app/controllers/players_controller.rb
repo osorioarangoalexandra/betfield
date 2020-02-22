@@ -5,16 +5,20 @@ class PlayersController < ApplicationController
   # GET /players.json
   def index
     @players = Player.all
+    @team = Team.find(params[:team_id])
   end
 
   # GET /players/1
   # GET /players/1.json
   def show
+    @player = Player.find(params[:id])
+    @team = Team.find(params[:team_id])
   end
 
   # GET /players/new
   def new
     @player = Player.new
+    @team = Team.find(params[:team_id])
   end
 
   # GET /players/1/edit
@@ -25,11 +29,13 @@ class PlayersController < ApplicationController
   # POST /players.json
   def create
     @player = Player.new(player_params)
+    
+    @player.team_id = params[:team_id] 
 
     respond_to do |format|
       if @player.save
-        format.html { redirect_to @player, notice: 'Player was successfully created.' }
-        format.json { render :show, status: :created, location: @player }
+        format.html { redirect_to "/teams/#{params[:team_id]}/", notice: 'Player was successfully created.' }
+      
       else
         format.html { render :new }
         format.json { render json: @player.errors, status: :unprocessable_entity }
