@@ -10,6 +10,10 @@ class SchedulesController < ApplicationController
   # GET /schedules/1
   # GET /schedules/1.json
   def show
+    @schedule = Schedule.find(params[:id])
+    @home_team = Team.find(@schedule.home_team)
+    @away_team = Team.find(@schedule.away_team)
+
   end
 
   # GET /schedules/new

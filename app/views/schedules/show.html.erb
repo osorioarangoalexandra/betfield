@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Home team:</strong>
-  <%= @schedule.home_team %>
-</p>
+<div>
+  <%= @schedule.date_of_match %><br>
+  <%= @home_team.name %> VS. <%= @away_team.name %>
+
+  <div> Status for placing a bet: <%= @schedule.status %></div>
+  <div><%= link_to "Place Bet", "/bets/#{@schedule_id}" %></div>
+  <% current_time = Time.now %>
+  <% current_date = Date.today %>
+
+</div>
 
 <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
 <%= link_to 'Back', schedules_path %>
